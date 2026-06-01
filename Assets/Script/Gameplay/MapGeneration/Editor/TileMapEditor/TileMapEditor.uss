@@ -1,0 +1,25 @@
+.tilemap-editor {
+}
+
+.tile-container{
+
+    flex-grow: 1;
+}
+
+.tile-container--drag-over {
+    border-width: 1px;
+    border-radius: var(--unity-metrics-default-border_radius);
+    border-color: var(--unity-colors-input_field-border-focus);
+}
+
+.tile-element{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.tile-element__thumbnail{ 
+    width: 100%;
+    height: 100%;   
+}

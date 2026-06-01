@@ -1,0 +1,7 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/Script/Gameplay/MapGeneration/Editor/TileMapEditor/TileMapEditor.uss?fileID=7433441132597879392&amp;guid=bb007379ad5df4044808e1ce7395830c&amp;type=3#TileMapEditor"/>
+    <Style src="project://database/Assets/Script/Editor/CustomElement/CustomElements.uss?fileID=7433441132597879392&amp;guid=27660964d1aef9d40bfa74160ac3183f&amp;type=3#CustomElements"/>
+    <NgocDev.Gameplay.MapGeneration.Editor.TileRuleElement style="height: 118px;"/>
+    <uie:ObjectField label="TileMap" type="NgocDev.Gameplay.MapGeneration.TileMap, NgocDev.Gameplay.MapGeneration" tooltip="Tilemap file" name="ObjectField"/>
+    <NgocDev.Gameplay.MapGeneration.Editor.TileContainer name="TileContainer"/>
+</ui:UXML>

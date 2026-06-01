@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 701a165047421404b9dad967f18a17cd
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _defaultEditScene: {fileID: 102900000, guid: 38a52703f6f80eb498ece01b1a7bf18c, type: 3}
+  - mapRoot: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

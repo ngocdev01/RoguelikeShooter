@@ -1,0 +1,3 @@
+.map-editor__tab-view {
+    flex-grow: 1;
+}

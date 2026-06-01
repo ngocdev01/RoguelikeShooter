@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad0068ff00d40534ab9e9b31e50ec029, type: 3}
+  m_Name: GameConfig
+  m_EditorClassIdentifier: 
+  useBoostrapScene: 0
+  bootstrapScene:
+    m_AssetGUID: 3b0df6a8f48e15a428899465e7393ee5
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 1
+  assetsPath: Assets/AddressableAssets
+  eventChannelFolder: 

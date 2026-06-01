@@ -1,0 +1,20 @@
+<ui:UXML xmlns="UnityEngine.UIElements" xmlns:custom="NgocDev.Gameplay.MapGeneration.Editor" xmlns:ui="UnityEngine.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" editor-extension-mode="False">
+    <Style src="project://database/Assets/Script/Gameplay/MapGeneration/Editor/TileMapEditor/TileRuleElement.uss?fileID=7433441132597879392&amp;guid=f4c5fb94653746c4fae36a260ba20dcb&amp;type=3#TileRuleElement"/>
+    <ui:VisualElement class="tilerule-element__container">
+        <ui:VisualElement class="row">
+            <ui:VisualElement class="tilerule-element__cell"/>
+            <custom:NeighborTileElement focusable="true" direction="North" class="tilerule-element__cell"/>
+            <ui:VisualElement name="VisualElement" class=" tilerule-element__cell"/>
+        </ui:VisualElement>
+        <ui:VisualElement class="row">
+            <custom:NeighborTileElement focusable="true" direction="West" class="slot-left tilerule-element__cell"/>
+            <ui:VisualElement focusable="true" class="slot-center tilerule-element__center tilerule-element__cell"/>
+            <custom:NeighborTileElement focusable="true" direction="East" class="slot-right tilerule-element__cell"/>
+        </ui:VisualElement>
+        <ui:VisualElement class="row">
+            <ui:VisualElement class="tilerule-element__cell"/>
+            <custom:NeighborTileElement focusable="true" direction="South" class="slot-down tilerule-element__cell"/>
+            <ui:VisualElement class="tilerule-element__cell"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

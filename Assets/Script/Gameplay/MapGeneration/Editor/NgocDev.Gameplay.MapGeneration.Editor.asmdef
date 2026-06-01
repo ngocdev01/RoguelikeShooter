@@ -1,0 +1,20 @@
+{
+    "name": "NgocDev.Gameplay.MapGeneration.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:45caa8467bcaaeb47aa19206684fbc80",
+        "GUID:9a174e5c6b10d994f81e2b797123ca19",
+        "GUID:2de408d9822fbe44bad6b6522454e2fa"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Tile Prefab
+  m_EditorClassIdentifier: 
+  m_GroupName: Tile Prefab
+  m_GUID: aee7ea944f37ace41a0827f2302bd406
+  m_SerializeEntries:
+  - m_GUID: 3f49cab42bf8b8c468c428f525284b67
+    m_Address: Tile Prefab/TileMap/TileMap
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4b335eecbda736e47845ae1165918367
+    m_Address: Tile Prefab/GameObject/Cube
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aa4148eeed993f049a7df7fb3ff01ce2
+    m_Address: Tile Prefab/GameObject/tail
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: ae59f24fa03dcdb40821a2ed5e661494, type: 2}
+  m_SchemaSet:
+    m_Schemas: []

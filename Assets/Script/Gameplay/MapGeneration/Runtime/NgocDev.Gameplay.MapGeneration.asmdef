@@ -1,0 +1,19 @@
+{
+    "name": "NgocDev.Gameplay.MapGeneration",
+    "rootNamespace": "NgocDev.Gameplay.MapGeneration",
+    "references": [
+        "GUID:0d040f769ba7bae4ca29910c76825af4",
+        "GUID:343deaaf83e0cee4ca978e7df0b80d21",
+        "GUID:09fc2f46fe217c645bf899614dee4f01",
+        "GUID:2de408d9822fbe44bad6b6522454e2fa"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

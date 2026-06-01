@@ -1,0 +1,100 @@
+{
+    "weaponDatas": [
+        {
+            "weaponName": "",
+            "attackSpeed": 3.0,
+            "damage": 4,
+            "prefab": "None (Weapon)",
+            "icon": "",
+            "sfx": ""
+        },
+        {
+            "weaponName": "",
+            "attackSpeed": 3.0,
+            "damage": 4,
+            "prefab": "None (Weapon)",
+            "icon": "",
+            "sfx": ""
+        },
+        {
+            "weaponName": "hahaha",
+            "attackSpeed": 3.0,
+            "damage": 4,
+            "prefab": "Plane",
+            "icon": "",
+            "sfx": ""
+        },
+        {
+            "weaponName": "",
+            "attackSpeed": 3.0,
+            "damage": 4,
+            "prefab": "Plane",
+            "icon": "",
+            "sfx": ""
+        },
+        {
+            "weaponName": "",
+            "attackSpeed": 3.0,
+            "damage": 4,
+            "prefab": "Plane (Weapon)",
+            "icon": "",
+            "sfx": ""
+        },
+        {
+            "weaponName": "",
+            "attackSpeed": 3.0,
+            "damage": 4,
+            "prefab": "Plane",
+            "icon": "",
+            "sfx": ""
+        },
+        {
+            "weaponName": "",
+            "attackSpeed": 3.0,
+            "damage": 4,
+            "prefab": "Plane (Weapon)",
+            "icon": "",
+            "sfx": ""
+        },
+        {
+            "weaponName": "",
+            "attackSpeed": 3.0,
+            "damage": 4,
+            "prefab": "Plane",
+            "icon": "",
+            "sfx": ""
+        },
+        {
+            "weaponName": "",
+            "attackSpeed": 3.0,
+            "damage": 4,
+            "prefab": "Plane",
+            "icon": "",
+            "sfx": ""
+        },
+        {
+            "weaponName": "",
+            "attackSpeed": 3.0,
+            "damage": 4,
+            "prefab": "Plane",
+            "icon": "",
+            "sfx": ""
+        },
+        {
+            "weaponName": "",
+            "attackSpeed": 3.0,
+            "damage": 4,
+            "prefab": "Plane",
+            "icon": "",
+            "sfx": ""
+        },
+        {
+            "weaponName": "New Weapon",
+            "attackSpeed": 1.0,
+            "damage": 10,
+            "prefab": "",
+            "icon": "",
+            "sfx": ""
+        }
+    ]
+}

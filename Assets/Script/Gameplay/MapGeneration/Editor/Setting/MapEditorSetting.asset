@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 580d777c93f06804d84b3e90e34c2813, type: 3}
+  m_Name: MapEditorSetting
+  m_EditorClassIdentifier: NgocDev.Gameplay.MapGeneration.Editor::NgocDev.Gameplay.MapGeneration.Editor.MapEditorSetting
+  _gridColor: {r: 1, g: 1, b: 1, a: 1}
+  _gridOpacity: 0.5
+  _previewMaterial: {fileID: 2100000, guid: 76c03685dfae7a34c99eef47b00485ed, type: 2}
+  _previewColor: {r: 0.4809096, g: 0.4809096, b: 0.9528302, a: 0.5686275}

@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 0d26071e7a936b84c9ce6fd1d08564f0
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_ViewDataDictionary: {instanceID: 0}
+  - _tileMapEditorUXML: {fileID: 9197481963319205126, guid: 719ebb3ecfa16084abd99f022937491d, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
