@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace NgocDev.Gameplay.MapGeneration.Editor
 {
-    [NgocDev.Core.Config.EditorPath("Assets/Script/Gameplay/MapGeneration/Editor/Setting/MapEditorSetting.asset")]
-    public class MapEditorSetting : ScriptableSetting<MapEditorSetting>
+    [FilePath("Assets/Script/Gameplay/MapGeneration/Editor/Setting/MapEditorSetting.asset",FilePathAttribute.Location.ProjectFolder)]
+    public class MapEditorSetting : ScriptableSingleton<MapEditorSetting>
     {
         [SerializeField]
         private Color _gridColor = Color.white;
@@ -24,6 +24,15 @@ namespace NgocDev.Gameplay.MapGeneration.Editor
         public static Color gridColor => instance._gridColor;
         public static Material previewMaterial => instance._previewMaterial;
         public static Color previewColor => instance._previewColor;
+
+
+        public static string filePath => GetFilePath();
+        public static void Save()
+        {
+            instance.Save(false);
+            var i = AssetDatabase.LoadAssetAtPath<MapEditorSetting>(filePath);
+            Debug.Log(i);
+        }
 
         private void OnValidate()
         {

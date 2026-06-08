@@ -2,80 +2,69 @@
 
 using System;
 using System.IO;
+using System.Reflection;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 
 namespace NgocDev.Core.Config
 {
-    public class EditorPathAttribute : Attribute
+    public class ScriptableSettingAttribute : Attribute
     {
-        public string filePath;
-        public EditorPathAttribute(string filePath)
+        public string editorFilePath;
+        public string runtimeKey;
+        public ScriptableSettingAttribute(string editorFilePath, string runtimeKey)
         {
-            this.filePath = filePath;
+            this.editorFilePath = editorFilePath;
+            this.runtimeKey = runtimeKey;
         }
     }
+
+
 
 
     public abstract class ScriptableSetting<T> : ScriptableObject where T : ScriptableSetting<T>
     {
         private static T _instance;
+        protected string _runtimeKey;
         public static T instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = GetOrCreateInstance();
+                    _instance = GetInstance();
                 }
                 return _instance;
             }
         }
 
-        public static T GetOrCreateInstance()
+        public static T GetInstance()
         {
-            T instance = null;
+            var type = typeof(T);
+            var attributes = type.GetCustomAttribute<ScriptableSettingAttribute>(false);
 #if UNITY_EDITOR
-            if (!AssetDatabase.IsValidFolder(Path.GetDirectoryName(GetFilePath()))) { return null; }
-                var path = GetFilePath();
-            instance = AssetDatabase.LoadAssetAtPath<T>(path);
-            if (instance == null)
+            var editorFilePath = attributes?.editorFilePath; 
+            var asset = AssetDatabase.LoadAssetAtPath<T>(editorFilePath);
+            if(asset == null)
             {
-                instance = CreateInstance<T>();
-                AssetDatabase.CreateAsset(instance, path);
-                AssetDatabase.SaveAssets();
-                return instance;
+                Debug.LogError($"Failed to load ScriptableSetting at path: {editorFilePath}");
             }
-#endif
-            return instance;
-
-        }
-
-#if UNITY_EDITOR
-        public static SerializedObject GetSerializedObject()
-        {
-            return new SerializedObject(instance);
-        }
-
-#endif
-
-        protected static string GetFilePath()
-        {
-            Type typeFromHandle = typeof(T);
-            object[] customAttributes = typeFromHandle.GetCustomAttributes(inherit: true);
-            object[] array = customAttributes;
-            foreach (object obj in array)
+            return asset;
+#else
+            var runtimeKey = attributes?.runtimeKey;
+            //TODO: Async load
+            var asset = Addressables.LoadAssetAsync<T>(runtimeKey).WaitForCompletion();
+            if(asset == null)
             {
-                if (obj is EditorPathAttribute)
-                {
-                    EditorPathAttribute editorPath = obj as EditorPathAttribute;
-                    return editorPath.filePath;
-                }
+                Debug.LogError($"Failed to load ScriptableSetting with key: {runtimeKey}");
             }
-
-            return string.Empty;
+            return asset;
+#endif
         }
+
+
     }
 
 }

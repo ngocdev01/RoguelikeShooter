@@ -14,13 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_GroupName: Game Config
   m_GUID: a92b169df2dd7eb46878c775f9194322
-  m_SerializeEntries:
-  - m_GUID: 20d0bfdda0aa7dc4b94aaf1fdd3bdfb9
-    m_Address: Assets/Config/GameConfig.asset
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Game Config
-    FlaggedDuringContentUpdateRestriction: 0
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ae59f24fa03dcdb40821a2ed5e661494, type: 2}
   m_SchemaSet:

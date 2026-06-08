@@ -1,7 +1,10 @@
 using NgocDev.Editor;
-using UnityEditor;
 using NgocDev.UI;
+using System.Reflection;
+using UnityEditor;
+using UnityEditor.AddressableAssets;
 using UnityEditor.UIElements;
+using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace NgocDev.Core.Config
@@ -16,12 +19,10 @@ namespace NgocDev.Core.Config
             root.style.paddingTop = 4;
             root.style.paddingBottom = 4;
             root.styleSheets.Add(CustomElement.LoadMainStyleSheet());
-            
 
 
 
             root.Add(BootstrapRegion());
-
             root.Add(EventRegion());
 
 
@@ -32,6 +33,7 @@ namespace NgocDev.Core.Config
             return root;
         }
 
+
         private VisualElement BootstrapRegion()
         {
             var bootstrapRegion = new EditorFoldoutRegion("Bootstrap Scene");
@@ -39,11 +41,11 @@ namespace NgocDev.Core.Config
             var toggle = new SlideToggle("Use Boostrap Scene");
             toggle.BindProperty(useBoostrapScene);
 
-           
+
 
             var bootstrapSceneProperty = serializedObject.FindProperty("bootstrapScene");
             var bootstrapSceneField = new PropertyField(bootstrapSceneProperty);
-            
+
             bootstrapRegion.Add(toggle);
             bootstrapRegion.Add(bootstrapSceneField);
 
@@ -63,7 +65,8 @@ namespace NgocDev.Core.Config
             return eventRegion;
         }
 
-    }
 
+      
+    }
 
 }

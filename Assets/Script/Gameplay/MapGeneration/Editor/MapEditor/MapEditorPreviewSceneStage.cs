@@ -40,6 +40,7 @@ namespace NgocDev.Gameplay.MapGeneration.Editor
                 Debug.LogError("Default edit scene is not set.");
                 return false;
             }
+            MapEditorSetting.Save();
             scene = UnityEditor.SceneManagement.EditorSceneManager.OpenPreviewScene(path);
             var rootObjects = scene.GetRootGameObjects();
             foreach (var obj in rootObjects)
@@ -50,7 +51,7 @@ namespace NgocDev.Gameplay.MapGeneration.Editor
             mapRoot = new GameObject("MapRoot");
             mapRoot.hideFlags = HideFlags.NotEditable;
             SceneManager.MoveGameObjectToScene(mapRoot, scene);
-            SceneView.duringSceneGui += Render;
+           
 
             _ = BatchInstantiate(100);
 

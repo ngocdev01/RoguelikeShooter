@@ -15,6 +15,12 @@ MonoBehaviour:
   m_GroupName: Data
   m_GUID: fc34458916e48404da221adb3789419f
   m_SerializeEntries:
+  - m_GUID: 20d0bfdda0aa7dc4b94aaf1fdd3bdfb9
+    m_Address: Config/GameConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Game Config
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6885d76cc00bd484fa72ab2fdf753b6a
     m_Address: Data/WeaponDatabaseData
     m_ReadOnly: 0
