@@ -45,9 +45,9 @@ namespace NgocDev.Core.Config
             var type = typeof(T);
             var attributes = type.GetCustomAttribute<ScriptableSettingAttribute>(false);
 #if UNITY_EDITOR
-            var editorFilePath = attributes?.editorFilePath; 
+            var editorFilePath = attributes?.editorFilePath;
             var asset = AssetDatabase.LoadAssetAtPath<T>(editorFilePath);
-            if(asset == null)
+            if (asset == null)
             {
                 Debug.LogError($"Failed to load ScriptableSetting at path: {editorFilePath}");
             }
@@ -64,7 +64,16 @@ namespace NgocDev.Core.Config
 #endif
         }
 
-
+        public async Awaitable InitializeAsync()
+        {
+            var type = typeof(T);
+            var attribute = type.GetCustomAttribute<ScriptableSettingAttribute>(false);
+            if (attribute == null)
+            {
+                Debug.LogError($"ScriptableSetting of type {type.Name} is missing ScriptableSettingAttribute.");
+            }
+            var runtimeKey = attribute.runtimeKey;
+            _instance = await Addressables.LoadAssetAsync<T>(runtimeKey).Task;
+        }
     }
-
 }
