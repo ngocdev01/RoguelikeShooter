@@ -12,8 +12,8 @@ namespace NgocDev.Core.Config
 {
     public class ScriptableSettingAttribute : Attribute
     {
-        public string editorFilePath;
-        public string runtimeKey;
+        public readonly string editorFilePath;
+        public readonly string runtimeKey;
         public ScriptableSettingAttribute(string editorFilePath, string runtimeKey)
         {
             this.editorFilePath = editorFilePath;
@@ -27,7 +27,7 @@ namespace NgocDev.Core.Config
     public abstract class ScriptableSetting<T> : ScriptableObject where T : ScriptableSetting<T>
     {
         private static T _instance;
-        protected string _runtimeKey;
+        protected string runtimeKey;
         public static T instance
         {
             get
@@ -51,6 +51,7 @@ namespace NgocDev.Core.Config
             {
                 Debug.LogError($"Failed to load ScriptableSetting at path: {editorFilePath}");
             }
+            
             return asset;
 #else
             var runtimeKey = attributes?.runtimeKey;

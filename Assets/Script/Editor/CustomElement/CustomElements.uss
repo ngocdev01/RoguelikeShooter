@@ -39,13 +39,8 @@
     border-radius: var(--unity-metrics-default-border_radius);
 }
 
-.editor-foldout-region > .unity-foldout__toggle {
-    background-color: var(--unity-colors-inspector_titlebar-background);
-    border-radius: var(--unity-metrics-default-border_radius);
-    height: var(--unity-metrics-inspector_titlebar-height);
-    border-width: 1px;
-    border-color: var(--unity-colors-inspector_titlebar-border);
-}
+
+ 
 
 .flex-grid {
     display: flex;

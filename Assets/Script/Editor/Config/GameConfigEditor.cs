@@ -37,22 +37,13 @@ namespace NgocDev.Core.Config
         private VisualElement BootstrapRegion()
         {
             var bootstrapRegion = new EditorFoldoutRegion("Bootstrap Scene");
-            var useBoostrapScene = serializedObject.FindProperty("useBoostrapScene");
-            var toggle = new SlideToggle("Use Boostrap Scene");
-            toggle.BindProperty(useBoostrapScene);
-
-
+            
 
             var bootstrapSceneProperty = serializedObject.FindProperty("bootstrapScene");
             var bootstrapSceneField = new PropertyField(bootstrapSceneProperty);
-
-            bootstrapRegion.Add(toggle);
+            
             bootstrapRegion.Add(bootstrapSceneField);
-
-            toggle.RegisterValueChangedCallback(evt =>
-            {
-                bootstrapSceneField.SetEnabled(useBoostrapScene.boolValue);
-            });
+            
             return bootstrapRegion;
         }
         private VisualElement EventRegion()

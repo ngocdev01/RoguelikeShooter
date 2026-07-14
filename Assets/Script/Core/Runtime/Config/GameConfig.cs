@@ -7,10 +7,9 @@ using System.Linq;
 
 namespace NgocDev.Core.Config
 {
-    [ScriptableSetting("Config/GameConfig","Assets/Config/GameConfig")]
-    public class GameConfig : ScriptableSetting<GameConfig>
+    [ScriptableSetting("Assets/Config/GameConfig", "Config/GameConfig")]
+    public class GameConfig : ScriptableObject
     {
-        public bool useBoostrapScene = true;
         public SceneReference bootstrapScene = null;
         public string assetsPath = "Assets/AddressableAssets";
         public string eventChannelFolder = null;

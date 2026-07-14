@@ -13,68 +13,71 @@ namespace NgocDev
         public static readonly string inputKnobUssClassName = "slide-toggle__input-knob";
         public static readonly string inputCheckedUssClassName = "slide-toggle__input--checked";
 
-        VisualElement m_Input;
-        VisualElement m_Knob;
+        private VisualElement _input;
+        private VisualElement _knob;
 
 
-        public SlideToggle() : this(null) { }
-        public SlideToggle(string label) : base(label,null)
+        public SlideToggle() : this(null)
+        {
+        }
+
+        public SlideToggle(string label) : base(label, null)
         {
             AddToClassList(ussClassName);
 
-         
-            m_Input = this.Q(className: BaseField<bool>.inputUssClassName);
-            m_Input.AddToClassList(inputUssClassName);
 
-          
-            m_Knob = new VisualElement();
-            m_Knob.AddToClassList(inputKnobUssClassName);
-            m_Input.Add(m_Knob);
+            _input = this.Q(className: BaseField<bool>.inputUssClassName);
+            _input.AddToClassList(inputUssClassName);
+
+
+            _knob = new VisualElement();
+            _knob.AddToClassList(inputKnobUssClassName);
+            _input.Add(_knob);
 
             styleSheets.Add(CustomElement.LoadMainStyleSheet());
 
 
-
-            RegisterCallback<ClickEvent>(evt => OnClick(evt));
-            RegisterCallback<KeyDownEvent>(evt => OnKeydownEvent(evt));
-            RegisterCallback<NavigationSubmitEvent>(evt => OnSubmit(evt));
+            RegisterCallback<ClickEvent>(OnClick);
+            RegisterCallback<KeyDownEvent>(OnKeydownEvent);
+            RegisterCallback<NavigationSubmitEvent>(OnSubmit);
         }
-        static void OnClick(ClickEvent evt)
+
+        private static void OnClick(ClickEvent evt)
         {
-            var slideToggle = evt.currentTarget as SlideToggle;
-            slideToggle.ToggleValue();
+            if (evt.currentTarget is SlideToggle slideToggle) slideToggle.ToggleValue();
             evt.StopPropagation();
         }
 
-        static void OnSubmit(NavigationSubmitEvent evt)
+        private static void OnSubmit(NavigationSubmitEvent evt)
         {
-            var slideToggle = evt.currentTarget as SlideToggle;
-            slideToggle.ToggleValue();
+            if (evt.currentTarget is SlideToggle slideToggle) slideToggle.ToggleValue();
             evt.StopPropagation();
         }
 
-        static void OnKeydownEvent(KeyDownEvent evt)
+        private static void OnKeydownEvent(KeyDownEvent evt)
         {
-            var slideToggle = evt.currentTarget as SlideToggle;
-            if (slideToggle.panel?.contextType == ContextType.Player)
-                return;        
-            if (evt.keyCode == KeyCode.KeypadEnter || evt.keyCode == KeyCode.Return || evt.keyCode == KeyCode.Space)
+            if (evt.target is SlideToggle slideToggle)
             {
-                slideToggle.ToggleValue();
-                evt.StopPropagation();
+                if (slideToggle.panel.contextType == ContextType.Player)
+                    return;
+                if (evt.keyCode == KeyCode.KeypadEnter || evt.keyCode == KeyCode.Return || evt.keyCode == KeyCode.Space)
+                {
+                    slideToggle.ToggleValue();
+                    evt.StopPropagation();
+                }
             }
         }
+
         void ToggleValue()
         {
             value = !value;
         }
 
-       
+
         public override void SetValueWithoutNotify(bool newValue)
         {
             base.SetValueWithoutNotify(newValue);
-            m_Input.EnableInClassList(inputCheckedUssClassName, newValue);
+            _input.EnableInClassList(inputCheckedUssClassName, newValue);
         }
-
     }
 }
